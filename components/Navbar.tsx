@@ -12,6 +12,9 @@ const Navbar = () => {
       <Link href="/tours" className="hover:text-blue-500">
         Tours
       </Link>
+      <Link href="/images" className="hover:text-blue-500">
+        Images
+      </Link>
       <Link href="/actions" className="hover:text-blue-500">
         Actions
       </Link>
