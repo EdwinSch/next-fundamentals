@@ -1,4 +1,5 @@
 import { fetchUsers } from "@/utils/actions";
+import DeleteButton from "./DeleteButton";
 
 const UsersList = async () => {
   const users = await fetchUsers();
@@ -8,8 +9,11 @@ const UsersList = async () => {
         <ul>
           {users.map((user) => {
             return (
-              <li key={user.id} className="capitalize">
-                {user.firstName} {user.lastName}
+              <li
+                key={user.id}
+                className="capitalize flex justify-between items-center mb-2"
+              >
+                {user.firstName} {user.lastName} <DeleteButton id={user.id} />
               </li>
             );
           })}
