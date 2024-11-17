@@ -18,7 +18,7 @@ export const createUser = async (formData: FormData) => {
   const lastName = formData.get("lastName") as string;
 
   // Create new user for database from input and use type "User"
-  const newUser: User = { firstName, lastName, id: Date.now().toString() };
+  const newUser: User = { id: Date.now().toString(), firstName, lastName };
 
   console.log({ firstName, lastName });
 
@@ -26,6 +26,7 @@ export const createUser = async (formData: FormData) => {
   //   const rawData = Object.fromEntries(formData);
   //   console.log(rawData);
 
+  // Invoke Save New User
   await saveUser(newUser);
 };
 
