@@ -1,6 +1,8 @@
 "use server";
 
 import { readFile, writeFile } from "fs/promises";
+import { revalidatePath } from "next/cache";
+// import { redirect } from "next/navigation";
 
 // Create type for User Object
 type User = {
@@ -28,6 +30,10 @@ export const createUser = async (formData: FormData) => {
 
   // Invoke Save New User
   await saveUser(newUser);
+  // Revalidate Cache (clear and reload current cache)
+  revalidatePath("/actions");
+  // ALTERNATIVE: clear cache by re-routing (NOTE: will need to navigate to another page first)
+  //   redirect("/");
 };
 
 // Fetch existing users function

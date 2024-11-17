@@ -25,14 +25,14 @@ const Form = () => {
         name="firstName"
         required
         className={inputStyle}
-        defaultValue="john"
+        // defaultValue="john"
       />
       <input
         type="text"
         name="lastName"
         required
         className={inputStyle}
-        defaultValue="smith"
+        // defaultValue="smith"
       />
       <button type="submit" className={btnStyle}>
         submit
