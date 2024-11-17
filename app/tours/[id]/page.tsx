@@ -3,11 +3,13 @@
 // NOTE (3): From NEXT v15 the dynamic params need to be an ASYNC function
 
 const DynamicPage = ({ params }: { params: { id: string } }) => {
+  const { id } = params;
+
   console.log(params);
 
   return (
     <div>
-      <h1 className="text-4xl">ID : {params.id}</h1>
+      <h1 className="text-4xl">ID : {id}</h1>
     </div>
   );
 };
