@@ -2,6 +2,8 @@
 
 import { readFile, writeFile } from "fs/promises";
 import { revalidatePath } from "next/cache";
+import { nanoid } from "nanoid";
+
 // import { redirect } from "next/navigation";
 
 // Create type for User Object
@@ -20,7 +22,7 @@ export const createUser = async (formData: FormData) => {
   const lastName = formData.get("lastName") as string;
 
   // Create new user for database from input and use type "User"
-  const newUser: User = { id: Date.now().toString(), firstName, lastName };
+  const newUser: User = { id: nanoid(), firstName, lastName };
 
   console.log({ firstName, lastName });
 
