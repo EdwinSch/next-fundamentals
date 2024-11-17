@@ -4,6 +4,7 @@
 // "use server";
 
 import { createUser } from "@/utils/actions";
+import { useFormStatus } from "react-dom";
 
 const formStyle = "max-w-lg flex flex-col gap-y-4  shadow rounded p-8";
 const inputStyle = "border shadow rounded py-2 px-3 text-gray-700";
@@ -15,6 +16,16 @@ const btnStyle =
 //   "use server";
 //   console.log("creating user...");
 // };
+
+// Rendering submit BTN as a component to use Form hooks
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" className={btnStyle} disabled={pending}>
+      {pending ? "submitting..." : "submit"}
+    </button>
+  );
+};
 
 const Form = () => {
   return (
@@ -34,9 +45,7 @@ const Form = () => {
         className={inputStyle}
         // defaultValue="smith"
       />
-      <button type="submit" className={btnStyle}>
-        submit
-      </button>
+      <SubmitButton />
     </form>
   );
 };

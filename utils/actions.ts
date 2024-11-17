@@ -28,11 +28,16 @@ export const createUser = async (formData: FormData) => {
   //   const rawData = Object.fromEntries(formData);
   //   console.log(rawData);
 
-  // Invoke Save New User
-  await saveUser(newUser);
-  // Revalidate Cache (clear and reload current cache)
-  revalidatePath("/actions");
-  // ALTERNATIVE: clear cache by re-routing (NOTE: will need to navigate to another page first)
+  try {
+    // Invoke Save New User
+    await saveUser(newUser);
+    // Revalidate Cache (clear and reload current cache)
+    revalidatePath("/actions");
+  } catch (error) {
+    console.log(error);
+  }
+
+  // ALTERNATIVE: clear cache by re-routing (NOTE: will need to navigate to another page first. DO NOT use in a try/catch block)
   //   redirect("/");
 };
 
