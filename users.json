@@ -1,4 +1,1 @@
-[
-  { "id": "SnORph1HQXQjPKwV65lpS", "firstName": "John", "lastName": "Smith" },
-  { "id": "A0qQ3CyJbJlScPw-lnVHU", "firstName": "Jane", "lastName": "Smith" }
-]
+[{"id":"SnORph1HQXQjPKwV65lpS","firstName":"John","lastName":"Smith"},{"id":"A0qQ3CyJbJlScPw-lnVHU","firstName":"Jane","lastName":"Smith"},{"id":"JfqxSiEf-4QM1Ud56nl1A","firstName":"Shake","lastName":"and Bake"},{"id":"KuZqncVlIJ_uUsknPgkXR","firstName":"thunder client","lastName":"smith"},{"id":"8xRajuDjVHBla386FLPlA","firstName":"thunder client","lastName":"smith"}]
